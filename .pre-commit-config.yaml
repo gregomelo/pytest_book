@@ -7,7 +7,7 @@ repos:
     -   id: check-yaml
     -   id: check-added-large-files
     -   id: debug-statements
-#    -   id: double-quote-string-fixer -- Hook temporally removed
+#    -   id: double-quote-string-fixer  -- Hook temporally removed
     -   id: detect-private-key
     -   id: name-tests-test
     -   id: requirements-txt-fixer
@@ -23,10 +23,10 @@ repos:
     rev: v3.1.0
     hooks:
     -   id: add-trailing-comma
-  - repo: https://github.com/psf/black
-    rev: 23.12.1
-    hooks:
-      - id: black
+#  - repo: https://github.com/psf/black  -- Hook temporarily removed to solve the conflict between black and cards project dependencies
+#    rev: 23.12.1
+#    hooks:
+#      - id: black
   - repo: https://github.com/hhatto/autopep8
     rev: v2.0.4
     hooks:
