@@ -41,10 +41,18 @@ repos:
     hooks:
     -   id: mypy
         additional_dependencies: [types-all]
+# Bandit hook avoing B101 (assert statement) on tests folder
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.6
     hooks:
       - id: bandit
+        args: ["--skip", "B101", "--recursive", "./tests/"]
+# Bandit hook on the remain project folders
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.6
+    hooks:
+      - id: bandit
+        args: ["--exclude", "./tests/", "--recursive", "./"]
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.13.0
     hooks:
